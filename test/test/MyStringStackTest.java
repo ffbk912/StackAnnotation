@@ -33,7 +33,17 @@ public class MyStringStackTest extends TestCase {
 	public void testPush() {
 		String o1 = null;  
 		MyStringStack stack = new MyStringStack();
-	
+		assertTrue (stack.isEmpty());
+		stack.push(s1);
+		assertFalse(stack.isEmpty());
+		
+		try {
+			s3 = stack.pop();
+		}catch (NoSuchElementException e) {
+			fail();
+		}
+		assertSame (s1,s3);
+		assertTrue (stack.isEmpty());
 	}
 
 	@Test
